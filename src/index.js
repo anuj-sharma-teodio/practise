@@ -1,10 +1,9 @@
-const express = require('express');
-const axios = require('axios');
+import express from 'express';
+import axios from 'axios';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Move /products logic to /
-app.get('/', async (req, res) => {
+app.get('/', async (_, res) => {
     try {
         const response = await axios.get('https://fakestoreapi.com/products');
         res.json(response.data);
